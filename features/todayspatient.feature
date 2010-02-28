@@ -30,3 +30,12 @@ Feature: Todays Patients
 		And I press "Save Details"
 		And I click "DETAILS"
 		Then I should see "NTP"
+
+	Scenario: Searching in today's patients
+    Given I am logged in as "user" with password "user"
+    And I click "TODAY'S PATIENTS"
+		When I fill in "last" with "collin"
+		And I press "Search"
+		# And I select "#3 -  Collin, Jacque" from "consult_patient_id"
+		And I press "submitconsult"
+		Then I should see "VISIT DETAILS"

@@ -13,7 +13,22 @@ module NavigationHelpers
     
     when /patient management form/
     	'/info/index.php?page=PATIENTS&menu_id=657'
-    
+
+    when /patient consult form/
+    	'/info/index.php?page=CONSULTS&menu_id=1327'
+
+    when /patient visit/
+    	'/info/index.php?page=CONSULTS&menu_id=1327&consult_id=2&ptmenu=DETAILS'
+
+    when /maternal visit1/
+	'/info/index.php?page=CONSULTS&menu_id=1327&consult_id=2&ptmenu=DETAILS&module=mc&mc=VISIT1'
+
+    when /maternal prenatal/
+	'/info/index.php?page=CONSULTS&menu_id=1327&consult_id=2&ptmenu=DETAILS&module=mc&mc=PREN&mc_id=2'
+
+    when /maternal postpartum/
+	'/info/index.php?page=CONSULTS&menu_id=1327&consult_id=2&ptmenu=DETAILS&module=mc&mc=POSTP&mc_id=2'
+						      
     else
       raise "Can't find mapping from \"#{page_name}\" to a path.\n" +
         "Now, go and add a mapping in #{__FILE__}"
