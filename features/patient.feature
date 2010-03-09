@@ -27,7 +27,7 @@ Feature: Manage Patients
 		And I should see "PATIENTS REGISTERED TODAY"
 		And I should see "Bonifacio, Andres"
 		And I am on the old patient form
-		And I fill "first" with "Andres"
+		And I fill in "first" with "Andres"
 		And I fill in "last" with "Bonifacio"
 		Then I should see "Found 1 Record: Andres Bonifacio"
 

@@ -4,9 +4,9 @@ Feature: Family Folders
    As a chits user
    I want to be able to create, search, update and delete family folders  
 
-@reset_families    
+@reset_families 
    Scenario: Add A New Family Folder
-    Given I am logged in as "user" with password "user"
+   Given I am logged in as "user" with password "user"
     And I click "FAMILY FOLDERS"
     When I fill in "family_address" with "1234 ABC Street"
     And I select "Brgy 1" from "barangay"
