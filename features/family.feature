@@ -3,15 +3,17 @@ Feature: Family Folders
    In order to efficiently manage patients into families and readily access family data
    As a chits user
    I want to be able to create, search, update and delete family folders  
-    
+
+@reset_families 
    Scenario: Add A New Family Folder
-    Given I am logged in as "user" with password "user"
+   Given I am logged in as "user" with password "user"
     And I click "FAMILY FOLDERS"
     When I fill in "family_address" with "1234 ABC Street"
     And I select "Brgy 1" from "barangay"
     And I press "Create Folder"
     Then I should see "No members"
-       
+
+@reset_families       
   Scenario: Search A Family Folder
     Given I am logged in as "user" with password "user"
     And I click "FAMILY FOLDERS"
@@ -19,10 +21,11 @@ Feature: Family Folders
     And I press "Search"
     Then I should see "COUNT"
 
+@reset_families
    Scenario: Update Family Folder Details
     Given I am logged in as "user" with password "user"
     And I click "FAMILY FOLDERS"
-    When I fill in "family_number" with "37"
+    When I fill in "family_number" with "1"
     And I press "Search"
     And I should see "SELECTED FAMILY"
     And I click "edit"
@@ -32,7 +35,7 @@ Feature: Family Folders
     Then I should see "6789 XYZ Street"
     And I should see "Brgy 2"
 
-
+@reset_families
    Scenario: Delete Family Folder
     Given I am logged in as "admin" with password "admin"
     And I click "PATIENTS"
@@ -41,4 +44,4 @@ Feature: Family Folders
     And I should see "1"
     And I click "delete"
     And I press "Yes"
-    Then I should not see "1"
+    Then I should see "No family records"
