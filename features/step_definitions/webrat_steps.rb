@@ -85,6 +85,11 @@ When /^I check "([^\"]*)"$/ do |field|
   check(field) 
 end
 
+When /^I check by value "([^\"]*)"$/ do |value|
+  xpath = "//input[@type='checkbox' AND @value=#{value}]"
+  click_link(field_by_xpath(xpath))
+end
+
 When /^I uncheck "([^\"]*)"$/ do |field|
   uncheck(field) 
 end

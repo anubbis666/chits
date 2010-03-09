@@ -8,6 +8,16 @@ After ('@reset_users') do
   load_table("game_user")
 end
 
+Before ('@reset_consult') do
+  # Save user table data
+  save_table("m_consult")
+end
+
+After ('@reset_consult') do
+  # Reload user table data
+  load_table("m_consult")
+end
+
 def save_table(table_name)
   run "mysqldump -u #{@@test_database_username} --password=#{@@test_database_password} #{@@test_database_name} #{table_name}> /tmp/#{table_name}"
 

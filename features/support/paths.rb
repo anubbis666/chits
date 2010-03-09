@@ -20,6 +20,9 @@ module NavigationHelpers
     when /patient visit/
     	'/info/index.php?page=CONSULTS&menu_id=1327&consult_id=2&ptmenu=DETAILS'
 
+    when /patient search/
+    	'/info/index.php?page=CONSULTS&menu_id=1327&consult_id=5&ptmenu=DETAILS'
+
     when /maternal visit1/
 	'/info/index.php?page=CONSULTS&menu_id=1327&consult_id=2&ptmenu=DETAILS&module=mc&mc=VISIT1'
 
