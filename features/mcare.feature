@@ -114,3 +114,29 @@ Scenario: Post Visit
   And I check "breastfeeding_flag"
   And I press "Save Postpartum Visit"
   Then I should see "WEEK 3"
+
+@reset_consult
+Scenario: Services
+  Given I am logged in as "user" with password "user"
+  When I search patient
+  And I check by value "MATERNAL"
+  And I press "Save Details"
+  And I click "Maternal Care"	
+  And I click "SERVICES"
+  And I click "visit_type"
+  And I check by value "DENT"
+  And I check by value "IRON"
+  And I check by value "VITA"  
+  And I check by value "TT1" 
+  And I press "Update Services"
+  Then I should see "TT1"
+
+@reset_consult
+Scenario: End Consult
+  Given I am logged in as "user" with password "user"
+  When I search patient
+  And I click "CONSULT"
+  And I press "End Consult"
+  And I press "Yes"
+  Then I should not see "Makiling, Maria"
+
